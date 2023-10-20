@@ -6,8 +6,12 @@ os.system('clear')
 print('Ingrese el nombre de la imagen : ',end='')
 nombre=input()
 
-print('1: cifrar y 2: decifrar\nIngrese su opcion : ',end='')
+print('2: cifrar y 1: decifrar\nIngrese su opcion : ',end='')
 op=int(input())
 
-ecb.inicio(nombre,op)
+if op==2:
+	ecb.encrypt_image(nombre, nombre[:nombre.index('.')]+'_eECB.bmp', 'key.bin')
+elif op==1:
+	ecb.decrypt_image(nombre, nombre[:nombre.index('.')]+'_dECB.bmp', 'key.bin')
+
 
